@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLAYEDBYDIL</title>
+  <style>
+    /* ---------- GLOBAL STYLES ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Georgia",serif;
+      color: #333;
+      background-color:#D2B48C;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #c94f6d;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    h1, h2, h3 {
+      color: #111;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      color: #c94f6d;
+      font-weight: 600;
+    }
+
+    nav a {
+      margin-left: 25px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    nav a:hover {
+      color: #c94f6d;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1599940824391-2f6c973f0f58?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 150px 20px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #c94f6d;
+      color: #fff;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #a83d57;
+    }
+
+    /* ---------- ABOUT SECTION ---------- */
+    .about {
+      padding: 80px 10%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .about img {
+      flex: 1 1 400px;
+      border-radius: 10px;
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+    }
+
+    .about-text h2 {
+      margin-bottom: 15px;
+      color: #c94f6d;
+    }
+
+    /* ---------- SERVICES ---------- */
+    .services {
+      background: #fff7f9;
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    .services h2 {
+      margin-bottom: 40px;
+      color: #c94f6d;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+    }
+
+    /* ---------- GALLERY ---------- */
+    .gallery {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      color: #c94f6d;
+      margin-bottom: 40px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonials {
+      background: #fff7f9;
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      color: #c94f6d;
+      margin-bottom: 40px;
+    }
+
+    .testimonial {
+      background: #fff;
+      padding: 30px;
+      margin: 10px auto;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      font-style: italic;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: #c94f6d;
+      margin-bottom: 30px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+
+    button {
+      background: #c94f6d;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #a83d57;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 30px 10%;
+    }
+
+    footer a {
+      color: #f8c5d2;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SLAYEDBYDIL</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>This hair didn't come to participate; it came to dominate</h2>
+      <p>Hairstyling, coloring, and care to help you shine inside and out.</p>
+      <a href="#contact" class="btn">Book with me</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <img src="https://images.unsplash.com/photo-1600959907703-125ba1374a12?auto=format&fit=crop&w=800&q=80" alt="Salon Interior" />
+    <div class="about-text">
+      <h2>About me</h2>
+      <p>Welcome to <strong>SLAYEDBYDIL</strong>,Recently trained graduate passionate about starting a career as a Junior Hairstylist. Seeking an opportunity to develop professional skills, gain hands-on salon experience, and contribute to a team that values creativity, quality service, and continuous learning. Strong foundation in cutting, coloring, and styling techniques within a fast-paced salon environment. Dedicated to delivering excellent client service and maintaining high salon standards..</p>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service">
+        <h3>Blondes</h3>
+        <p>blowouts, and personalized styles for every occasion.</p>
+      </div>
+      <div class="service">
+        <h3>Haircut</h3>
+        <p>Balayage, blonding, and vivid colors customized for you.</p>
+      </div>
+      <div class="service">
+        <h3>Color</h3>
+        <p>Deep conditioning, gloss, and scalp treatments to nourish your hair.</p>
+      </div>
+      <div class="service">
+        <h3>Brunettes</h3>
+        <p>Elegant updos and special looks for weddings, shoots, and events.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <h2>My work</h2>
+    <div class="gallery-grid">
+      <img src="blonde.jpg" height"80" width"80"alt="Description">
+      <img src="haircut.jpg" height"80" width"80"alt="Description">
+      <img src="ginger.jpg" height"80" width"80"alt="Description">
+	  <img src="myimage.jpg" height"80" width"80"alt="Description">
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Words from Clients</h2>
+    <div class="testimonial">
+      “Dilpreet impressed me in many ways: she provided professional and clear communication with a sweet disposition; she delivered a perfect full foils service confidently: and she displayed keen attention to detail for my haircut. I really loved how she already has the hands and approach of a seasoned instructor when doing the full foils service.
+
+I have attended McCollege for over ten years now and experienced a wide variety of students at varying levels of knowledge and practice. Dilpreet stands out in that she firmly and precisely applies and paints the foils without any second guessing. She goes quite close to the root and gets the job done in a quick fashion. She spent her time performing a really good service with minimal distraction or chatting when it counted. She focused on doing a good service first and did not sacrifice her focus with additional idle client rapport. When there was a break or rest period, such as when my hair was processing, she would chat a bit more and keep the enjoyable appointment moving forward.
+
+I dare say, Dilpreet could possibly become an instructor at McCollege as she progresses through her career. Dilpreet has the gift of delivering what she learns in quick fashion. Yes, she is a new student, and yet she already shows amazing potential.
+
+Thanks to all the instructors as well for checking in and providing guidance, to both of us, when needed.
+”  
+      <br><strong>- Rosanne</strong>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Book an Appointment</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© SLAYEDBYDIL | YOUR GO TO SALON</p>
+    <p>
+      <a href="#">Instagram</a> |
+      <a href="#">Facebook</a> |
+      <a href="#">TikTok</a>
+    </p>
+  </footer>
+
+</body>
+</html>
+
+* WinGUp (for Notepad++) v5.3.3
